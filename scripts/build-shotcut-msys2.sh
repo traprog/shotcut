@@ -38,8 +38,8 @@ FFMPEG_ADDITIONAL_OPTIONS=
 MLT_HEAD=1
 MLT_REVISION=
 LOG_COLORS=0
-SHOTCUT_HEAD=1
-SHOTCUT_REVISION=
+SHOTCUT_HEAD=0
+SHOTCUT_REVISION="origin/ffmpeg_webp"
 SHOTCUT_VERSION=$(date '+%y.%m.%d')
 ENABLE_BIGSH0T=1
 BIGSH0T_HEAD=0
@@ -472,7 +472,7 @@ function set_globals {
   #####
   # ffmpeg
   CONFIG[0]="./configure --prefix=$FINAL_INSTALL_DIR --disable-static --disable-doc --enable-gpl --enable-version3 --enable-shared --enable-runtime-cpudetect $CONFIGURE_DEBUG_FLAG"
-  CONFIG[0]="${CONFIG[0]} --enable-libtheora --enable-libvorbis --enable-libmp3lame --enable-libx264 --enable-libx265 --enable-libvpx --enable-libopus --enable-libmfx --enable-libdav1d --enable-libaom --disable-decoder=libaom_av1"
+  CONFIG[0]="${CONFIG[0]} --enable-libtheora --enable-libvorbis --enable-libmp3lame --enable-libx264 --enable-libx265 --enable-libvpx --enable-libopus --enable-libmfx --enable-libdav1d --enable-libaom --disable-decoder=libaom_av1 --enable-libwebp"
   # Add optional parameters
   if [ "$ENABLE_ZIMG" = "1" ]; then
     CONFIG[0]="${CONFIG[0]} --enable-libzimg"
