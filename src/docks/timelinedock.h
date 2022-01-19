@@ -199,6 +199,7 @@ private:
     QScopedPointer<UndoHelper> m_undoHelper;
     int m_trimDelta;
     int m_transitionDelta;
+    bool m_addTransitionInProgress;
     bool m_blockSetSelection;
 
 private slots:
