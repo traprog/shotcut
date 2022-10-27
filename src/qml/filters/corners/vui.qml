@@ -176,7 +176,7 @@ Shotcut.VuiBase {
                     var delta = x - deltas[i] * cornersControl.width;
                     var min = i < deltas.length / 2 ? deltas[i] * cornersControl.height : deltas[deltas.length - i - 1] * cornersControl.height;
                     var max = i < deltas.length / 2 ? deltas[deltas.length - i - 1] * cornersControl.height : deltas[i] * cornersControl.height;
-                    if (Math.abs(delta) < snapMargin && min <= y && y <= max)
+                    if (Math.abs(delta) < snapMargin && min - snapMargin <= y && y <= max + snapMargin)
                         return x - delta;
 
                 }
@@ -203,7 +203,7 @@ Shotcut.VuiBase {
                     var delta = y - deltas[i] * cornersControl.height;
                     var min = i < deltas.length / 2 ? deltas[i] * cornersControl.width : deltas[deltas.length - i - 1] * cornersControl.width;
                     var max = i < deltas.length / 2 ? deltas[deltas.length - i - 1] * cornersControl.width : deltas[i] * cornersControl.width;
-                    if (Math.abs(delta) < snapMargin && min <= x && x <= max)
+                    if (Math.abs(delta) < snapMargin && min - snapMargin <= x && x <= max + snapMargin)
                         return y - delta;
 
                 }
