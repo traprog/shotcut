@@ -101,7 +101,7 @@ Item {
                     var delta = x - deltas[i] * parent.width;
                     var min = i < deltas.length / 2 ? deltas[i] * parent.height : deltas[deltas.length - i - 1] * parent.height;
                     var max = i < deltas.length / 2 ? deltas[deltas.length - i - 1] * parent.height : deltas[i] * parent.height;
-                    if (Math.abs(delta) < snapMargin && min <= y && y <= max)
+                    if (Math.abs(delta) < snapMargin && min - snapMargin <= y && y <= max + snapMargin)
                         return x - delta;
 
                 }
@@ -128,7 +128,7 @@ Item {
                     var delta = y - deltas[i] * parent.height;
                     var min = i < deltas.length / 2 ? deltas[i] * parent.width : deltas[deltas.length - i - 1] * parent.width;
                     var max = i < deltas.length / 2 ? deltas[deltas.length - i - 1] * parent.width : deltas[i] * parent.width;
-                    if (Math.abs(delta) < snapMargin && min <= x && x <= max)
+                    if (Math.abs(delta) < snapMargin && min - snapMargin <= x && x <= max + snapMargin)
                         return y - delta;
 
                 }
