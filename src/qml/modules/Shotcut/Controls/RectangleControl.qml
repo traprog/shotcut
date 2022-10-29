@@ -84,7 +84,7 @@ Item {
     }
 
     function snapX(x) {
-        if (!video.snapToGrid || video.grid === 0)
+        if (!video.snapToGrid || video.grid === 0 || !(mouse.modifiers & Qt.AltModifier))
             return x;
 
         if (video.grid !== 95 && video.grid !== 8090) {
@@ -109,7 +109,7 @@ Item {
     }
 
     function snapY(y) {
-        if (!video.snapToGrid || video.grid === 0)
+        if (!video.snapToGrid || video.grid === 0 || !(mouse.modifiers & Qt.AltModifier))
             return y;
 
         if (video.grid !== 95 && video.grid !== 8090) {
